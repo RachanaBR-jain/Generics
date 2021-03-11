@@ -1,12 +1,12 @@
-import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class Generics_Testing {
 
         Generics_Main maxOperation;
 
-        @Before
+        @BeforeEach
         public void setup() {
             maxOperation = new Generics_Main();
         }
@@ -32,7 +32,7 @@ public class Generics_Testing {
         @Test
         public void givenThreeFloats_AtFirstPosition_ShouldReturnMaximumValue() {
             Float maxFloat = maxOperation.findMaxFloat(10.33f, 1.2f, 5.7f);
-            Assertions.assertEquals(Float.valueOf(7.4f), maxFloat);
+            Assertions.assertEquals(Float.valueOf(10.33f), maxFloat);
         }
 
         @Test
@@ -46,7 +46,29 @@ public class Generics_Testing {
             Float maxFloat = maxOperation.findMaxFloat(5.5f, 3.2f, 10.33f);
             Assertions.assertEquals(Float.valueOf(10.33f), maxFloat);
         }
+
+
+    @Test
+    public void givenThreeString_AtFirstPosition_ShouldReturnMaximumValue() {
+        String maxString = maxOperation.findMaxString("Orange", "Apple", "Banana");
+        Assertions.assertEquals("Orange", maxString);
     }
+
+    @Test
+    public void givenThreeString_AtSecondPosition_ShouldReturnMaximumValue() {
+        String maxString = maxOperation.findMaxString("Apple", "Orange", "Banana");
+        Assertions.assertEquals("Orange", maxString);
+    }
+
+    @Test
+    public void givenThreeString_AtThirdPosition_ShouldReturnMaximumValue() {
+        String maxString = maxOperation.findMaxString("Apple", "Banana", "Orange");
+        Assertions.assertEquals("Orange", maxString);
+    }
+
+
+
+}
 
 
 

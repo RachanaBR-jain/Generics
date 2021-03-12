@@ -1,25 +1,24 @@
-public class Generics_Main <E extends Comparable<E>>{
-        E value1, value2, value3;
-
-        public Generics_Main(E value1, E value2, E value3) {
-            this.value1 = value1;
-            this.value2 = value2;
-            this.value3 = value3;
+class Generics_Main {
+    public static <E> E maxPrint(E max) {
+        System.out.println("Maximum Value is:" + max);
+        return max;
+    }
+    public static <E extends Comparable<E>> E findMax_Generics(E... num) {
+        for (int i = 0; i < num.length; i++) {
+            System.out.println(num[i]);
         }
-
-        public E maxFind() {
-            return Generics_Main.findMax_Generics(value1, value2, value3);
-        }
-
-        public static <E extends Comparable<E>> E findMax_Generics(E value1, E value2, E value3) {
-            E max = value1;
-            if (value2.compareTo(max) > 0) {
-                max = value2;
+        E temp;
+        for (int i = 0; i < (num.length - 1); i++) {
+            for (int j = 0; j < (num.length - 1); j++) {
+                if (num[j].compareTo(num[j + 1]) < 0) {
+                    temp = num[j];
+                    num[j] = num[j + 1];
+                    num[j + 1] = temp;
+                }
             }
-            if (value3.compareTo(max) > 0) {
-                max = value3;
-            }
-            return max;
         }
+        E max = num[0];
+        return max;
     }
 
+}

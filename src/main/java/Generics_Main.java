@@ -1,8 +1,5 @@
 class Generics_Main {
-    public static <E> E maxPrint(E max) {
-        System.out.println("Maximum Value is:" + max);
-        return max;
-    }
+
     public static <E extends Comparable<E>> E findMax_Generics(E... num) {
         for (int i = 0; i < num.length; i++) {
             System.out.println(num[i]);
@@ -20,5 +17,8 @@ class Generics_Main {
         E max = num[0];
         return max;
     }
-
+    public static <E> E maxPrint(E max) {
+        System.out.println("Maximum Value is:" + max);
+        return max;
+    }
 }

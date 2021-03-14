@@ -1,6 +1,6 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Assertions;
 
 public class Generics_Testing {
 
@@ -13,18 +13,18 @@ public class Generics_Testing {
 
     @Test
     public void findMaxOf_N_Integers() {
-        Integer[] intNum = {1, 2, 3, 4, 5};
+        Integer[] intNum = {10, 20, 35, 45, 50};
         Integer maxInteger = maxOperation.findMax_Generics(intNum);
         maxOperation.maxPrint(maxInteger);
-        Assertions.assertEquals(Integer.valueOf(5), maxInteger);
+        Assertions.assertEquals(Integer.valueOf(50), maxInteger);
     }
 
     @Test
     public void findMaxOf_N_Float() {
-        Float[] intNum = {1.0f, 2.0f, 3.0f, 4.0f, 5.0f};
+        Float[] intNum = {1.1f, 2.1f, 3.1f, 4.1f, 5.1f};
         Float maxFloat = maxOperation.findMax_Generics(intNum);
         maxOperation.maxPrint(maxFloat);
-        Assertions.assertEquals(Float.valueOf(5.0f), maxFloat);
+        Assertions.assertEquals(Float.valueOf(5.1f), maxFloat);
     }
 
     @Test
